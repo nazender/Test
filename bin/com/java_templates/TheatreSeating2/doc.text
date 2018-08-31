@@ -1,0 +1,122 @@
+Problem: Theatre Seating
+
+You run a small theater and each month, you have patrons requests for pre-sale tickets. A friend of yours runs your web site and you provide a set of web services to accept and process these ticket requests and either tell them where their party will sit or explain to the patron why you can't complete their order.
+
+You have a few rules that you need to follow when you fill the orders
+1.   Fill as many orders as possible
+2.   Put parties as close to the front as possible.
+3.   If there are not enough seats available in the theater to handle a party, tell them "Sorry, we can't handle your party."
+4.   Each party must sit in a single row in a single section.  If they won't fit, tell them "Call to split party".
+
+Your program must parse
+-     a theater layout that your friend will provide
+-     a list of ticket requests
+and produce a list of tickets or explanations in the same order as the requests.
+
+The theater layout is made up of 1 or more rows.  Each row is made up of 1 or more sections separated by a space.
+
+Layout Sample:
+[
+{row: [ {“section”:6},{“section”:6}]},
+{row: [ {“section”:3},{“section”:5},{“section”:5},{“section”:3}]},
+{row: [ {“section”:4},{“section”:6},{“section”:6},{“section”:4}]} ,
+{row: [ {“section”:2},{“section”:8},{“section”:8},{“section”:2}]} , row: [ {“section”:6},{“section”:6}]}
+]
+
+A web service MUST be provided to setup the theater layout
+After the theater layout is setup you accept 1 or more theater requests.
+
+Theatre Request Sample:
+[
+{“seq”:1, “name”: “smith”, “tickets”: 2},
+{“seq”:2, “name”: “jones”, “tickets”: 5},
+{“seq”:3, “name”: “davis”, “tickets”: 6},
+{“seq”:4, “name”: “wilson”, “tickets”: 100},
+{“seq”:5, “name”: “johnson”, “tickets”: 3},
+{“seq”:6, “name”: “williams”, “tickets”: 4},
+{“seq”:7, “name”: “brown”, “tickets”: 8},
+{“seq”:8, “name”: “miller”, “tickets”: 12},
+]
+
+Your program must produce results in response to a Theater Request to in the same order as the requests, with the name of the person who requested the ticket and either the row and section of the ticket or the explanations "Sorry, we can't handle your party" or "Call to split party."
+
+Sample output:
+[
+{“Name”: “Smith” , “row”: 1,  “section” : 1}
+{“Name”: “Jones” , “row” : 2 ,“section” : 2},
+{“Name”: “Davis” , “row” : 1, “section” : 2},
+{“Name”: “Wilson” , “message”: “Sorry, we can't handle your party”},
+{“Name”: “Johnson” ,“row” : 2, “section” : 1},
+{“Name”: “Williams” , “row” : 1 ,“section” : 1},
+{“Name”: “Brown” , “row” : 4  ,“section” : 2, “message” : “Miller Call to split party.”}
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Restricted - External
